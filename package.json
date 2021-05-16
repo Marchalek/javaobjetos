@@ -1,0 +1,20 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "projeto do bytebank para seus clientes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marchalek/javaobjetos.git"
+  },
+  "author": "Adriano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marchalek/javaobjetos/issues"
+  },
+  "homepage": "https://github.com/Marchalek/javaobjetos#readme",
+  "type":"module"
+}
