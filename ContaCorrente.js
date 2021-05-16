@@ -1,6 +1,14 @@
+import { Cliente } from "./cliente.js";
+
 export class ContaCorrente {
     agencia;
-    cliente;
+    _cliente;
+
+    set cliente(novoValor){
+        if (novoValor instanceof Cliente){
+            this._cliente = novoValor
+        }
+    }
 
     
     _saldo = 0; //usar _ como convenção de campo privado enquanto o # não é implementado oficialmente https://github.com/tc39/proposal-class-fields#private-fields
