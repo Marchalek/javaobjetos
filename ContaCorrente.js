@@ -1,18 +1,29 @@
-import { Cliente } from "./cliente.js";
+import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente {
+    //publico
+    static  numeroDeContas = 0;
     agencia;
-    _cliente;
+    
+    //privado
+    _cliente;    
+    _saldo = 0; //usar _ como convenção de campo privado enquanto o # não é implementado oficialmente https://github.com/tc39/proposal-class-fields#private-fields
 
+
+    //setters e getters
     set cliente(novoValor){
         if (novoValor instanceof Cliente){
-            this._cliente = novoValor
+            this._cliente = novoValor;
         }
     }
 
-    
-    _saldo = 0; //usar _ como convenção de campo privado enquanto o # não é implementado oficialmente https://github.com/tc39/proposal-class-fields#private-fields
-  
+    get cliente(){
+        return this._cliente;
+    }
+
+    get saldo(){
+        return this._saldo;
+    }
 
     sacar(valor){
         if(this._saldo >= valor) {
@@ -24,6 +35,15 @@ export class ContaCorrente {
         }
     }
 
+    //construtores
+    constructor (agencia, cliente){
+        this.cliente = cliente
+        this.agencia = agencia      
+        ContaCorrente.numeroDeContas += 1
+    }
+
+
+    //metódos da classee
     depositar(valor){
         if (valor<=0) return;
         this._saldo += valor;
